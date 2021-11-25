@@ -1,0 +1,7 @@
+Creating your first grid:
+- turn any element into a grid container:
+    - display: grid;
+    - define grid structure:
+        - grid-column-template:
+        - grid-row-template:
+        - grid

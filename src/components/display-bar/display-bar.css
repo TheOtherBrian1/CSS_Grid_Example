@@ -1,0 +1,16 @@
+.dropdown-content{
+    width: 100%;
+    height: 1px;
+    display: none;
+    transition-duration: 1s;
+    padding: 16px;
+    background-color: #dbdbdb;
+    font-size: 1.1rem;
+}
+
+.dropdown-content.displayBar{
+    height: auto;
+    max-height: 300px;
+    overflow-y: scroll;
+    display: block;
+}
