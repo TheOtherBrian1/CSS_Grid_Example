@@ -17,3 +17,13 @@
 .example-subtitle{
     font-size: .9rem;
 }
+.example-documentation{
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: flex-end;
+}
+.example-main-visual{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

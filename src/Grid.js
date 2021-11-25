@@ -24,14 +24,14 @@ const GridGenerator =({exampleId})=>{
     const Grid = styled.div`${tempGrid.style}`;
     const gridDimensions = useRef(null);
     return(
-        <div>
+        <div style = {{display: 'inline-block'}}>
             <div className = "horizontal-width-display" style = {{width: gridDimensions.current?.offsetWidth}}>
                 <span className = 'grid-dimensions-style'>{gridDimensions.current?.offsetWidth  || tempGrid.initialWidth}</span>
-                <hr />
+                <hr className = 'grid-hr'/>
             </div>
-            <div className = "hr-height-style" style = {{width: gridDimensions.current?.offsetHeight || tempGrid.initialHeight}}>
+            <div className = "hr-height-style" style = {{width: gridDimensions.current?.offsetHeight || 1}}>
                 <span>{gridDimensions.current?.offsetHeight}</span>
-                <hr />
+                <hr className = 'grid-hr'/>
             </div>
                 <Grid className = 'grid' ref = {gridDimensions}>
                     {
