@@ -1,9 +1,9 @@
 import React from 'react';
-import Example from './Example';
+import Example from './Components/Example/Example';
 
 const App = () => {
     return (
-      <div className="App">
+      <div style = {{width: 400}} className="App">
         <Example />
       </div>
   );
