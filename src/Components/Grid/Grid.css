@@ -1,0 +1,40 @@
+.grid-dimensions-style{
+    color: rgb(54, 54, 54)
+}
+
+.grid-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.grid-item:hover::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    opacity: .3;
+    border: dashed blue 2px;
+    position: absolute;
+}
+
+.hr-height-style{
+    transform-origin: left bottom;
+    transform: rotate(90deg) translateY(25px) scaleY(-1);
+}
+
+.hr-height-style span{
+    display: inline-block;
+    transform: rotate(180deg) scaleY(-1);
+}
+
+.grid-hr{
+    border-left-width: 0;
+    border-right-width: 0;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}

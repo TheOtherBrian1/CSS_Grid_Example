@@ -1,0 +1,29 @@
+.example-container{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    min-height: 300px;
+    padding: 20px;
+    color: rgb(51, 68, 85);
+    box-shadow: rgba(85, 102, 119, 0.03) 0px 6px 8px 0px, rgba(85, 102, 119, 0.4) 0px 1px 1px 0px
+}
+.example-title{
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight:500;
+    margin-right: .5ex;
+}
+.example-subtitle{
+    font-size: .9rem;
+}
+.example-documentation{
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: flex-end;
+}
+.example-main-visual{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
