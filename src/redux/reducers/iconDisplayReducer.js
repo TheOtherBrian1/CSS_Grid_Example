@@ -19,19 +19,23 @@ export const actions = {
 const iconToggleState = [
     {
         exampleId: 0,
-        selectedIcon: 'code',
+        selectedIcon: null,
     }
 ]
 
-const iconDisplayReducer = (state = iconToggleState, action) => produce((draft, action)=>{
-    const {exampleId = null, icon = null} = action.payload;
-    switch(action.type){
-        case iconTypes.SELECT_ICON:
-            draft[exampleId].selectedIcon = (icon ==='code')?'docs':'code';
-            break;
-        default:
-            break;
-    }
-})
+const iconDisplayReducer = (state = iconToggleState, action) => {
+    return(
+        produce(state, draft=>{
+            const pay = action.payload;
+            switch(action.type){
+                case iconTypes.SELECT_ICON:
+                    draft[pay.exampleId].selectedIcon = (draft[pay.exampleId].selectedIcon === pay.selectedIcon? null: pay.selectedIcon);
+                    break;
+                default:
+                    break;
+            }
+        })
+    )
+}
 
 export default iconDisplayReducer;

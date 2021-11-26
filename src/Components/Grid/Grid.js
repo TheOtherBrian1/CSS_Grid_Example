@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {actions} from '../../redux/reducers/mainGridsReducer'
+//import { useSelector, useDispatch } from 'react-redux';
+//import {actions} from '../../redux/reducers/iconDisplayReducer'
 import './Grid.css';
 import styled from 'styled-components'
 const GRID_COLORS = ['#dc97a9', '#f2cb7c', '#edaf88', '#d3bfb6', '#addad7', '#e5a88b', '#cf9683', '#cf7956', '#d16644', '#878f84', '#eedac2'];
