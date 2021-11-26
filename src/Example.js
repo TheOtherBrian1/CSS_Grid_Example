@@ -3,7 +3,8 @@ import './Example.css';
 import './iconSelectors.css';
 import {CodeOutlined, FileTextOutlined} from '@ant-design/icons';
 import GridGenerator from './Grid';
-
+import CssEditor from './CssEditor';
+import Docs from './Docs';
 
 const chooseCSS = (selectedIcon, icon)=>`drop-down-icons ${selectedIcon === icon?'icon-selected':''}`;
 
@@ -40,6 +41,10 @@ const Example = ()=>{
                         </span>
                     </div>
             </div>
+            <CssEditor />
+                <div>
+                    <Docs></Docs>
+                </div>
             <section className = "example-main-visual">
                 <GridGenerator />
             </section>
