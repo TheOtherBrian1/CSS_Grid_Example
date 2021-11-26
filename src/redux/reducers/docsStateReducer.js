@@ -72,26 +72,29 @@ const docsState = [
     }
 ];
 
-const docsStateReducer = (state = docsState, action) => produce((draft, action)=>{
-        const {exampleId = null, subId = null, newCode = null, gridItemId = null, gridItemCode = null} = action.payload;
-        switch(action.type){
-            case subGridTypes.MODIFY_GRID_CODE:
-                draft[exampleId].subExamples[subId].code = newCode;
-                break;
-            case subGridTypes.MODIFY_GRID_ITEM_CODE:
-                draft[exampleId].subExamples[subId].gridItems[gridItemId].code = gridItemCode;
-                break;
-            case subGridTypes.DELETE_GRID_ITEM:
-                draft[exampleId].subExamples[subId].gridItems[gridItemId] = state[exampleId].gridItems.filter(item=>item.gridItemId !== gridItemId);
-                break;
-            case subGridTypes.ADD_GRID_ITEM:
-                const gridIndex = state[exampleId].gridItems.length - 1;
-                draft[exampleId].subExamples[subId].gridItems.push({gridItemId: gridIndex, code: ''})
-                break;
-            default:
-                break;
+const docsStateReducer = (state = docsState, action) => {
+    return (
+        produce(state, draft=>{
+            const pay = action.payload;
+            switch(action.type){
+                case subGridTypes.MODIFY_GRID_CODE:
+                    draft[pay.exampleId].subExamples[pay.subId].code = pay.newCode;
+                    break;
+                case subGridTypes.MODIFY_GRID_ITEM_CODE:
+                    draft[pay.exampleId].subExamples[pay.subId].gridItems[pay.gridItemId].code = pay.gridItemCode;
+                    break;
+                case subGridTypes.DELETE_GRID_ITEM:
+                    draft[pay.exampleId].subExamples[pay.subId].gridItems.splice(pay.gridItemId, 1);
+                    break;
+                case subGridTypes.ADD_GRID_ITEM:
+                    const gridIndex = draft[pay.exampleId].gridItems.length - 1;
+                    draft[pay.exampleId].subExamples[pay.subId].gridItems.push({gridItemId: gridIndex, code: ''})
+                    break;
+                default:
+                    break;
+            }
         }
-    }
-)
+    )
+)};
 
 export default docsStateReducer;
