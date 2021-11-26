@@ -1,6 +1,7 @@
 import {type} from '../actions/icon-actions';
 import produce from 'immer';
-const mainGridState = [
+
+const mainGridsState = [
     {
         exampleId: 0,
         selectedIcon: 'code',
@@ -18,6 +19,7 @@ const mainGridState = [
         }
     }
 ];
+
 const docsState = [
     { 
         exampleId: 0,
@@ -26,6 +28,7 @@ const docsState = [
                 subId: 0,
                 title: '',
                 text: '',
+                code: '',
                 gridItems: [
                     {
                         gridItemId: 0,
@@ -49,23 +52,19 @@ const docsState = [
     }
 ]
     
-const iconReducer = (state = iconDefaultState, action) => produce(state, draft=>{
-    const {exampleId = null} = action.payload;
+const mainGridsReducer = (state = mainGridsState, action) => produce(state, draft=>{
+    const {exampleId = null, icon = null, newCode = null, gridItemId = null, gridItemCode = null,} = action.payload;
     switch(action.type){
         case type.SELECT_ICON:
-            const newIcon = action.payload.icon;
-            draft[exampleId].selectedIcon = newIcon==='code'?'docs':'code';
+            draft[exampleId].selectedIcon = (icon ==='code')?'docs':'code';
             break;
         case type.MODIFY_MAIN_GRID_CODE:
-            const newCode = action.payload.code;
             draft[exampleId].mainGrid.code = newCode;
             break;
         case type.MODIFY_MAIN_GRID_ITEM_CODE:
-            const {gridItemId, gridItemCode} = action.payload;
             draft[exampleId].mainGrid.gridItems[gridItemId].code = gridItemCode;
             break;
         case type.DELETE_MAIN_GRID_ITEM:
-            const {gridItemId} = action.payload;
             draft[exampleId].mainGrid.gridItems[gridItemId] = state[exampleId].mainGrid.gridItems.filter(item=>item.gridItemId !== gridItemId);
             break;
         case type.ADD_MAIN_GRID_ITEM:
@@ -76,4 +75,28 @@ const iconReducer = (state = iconDefaultState, action) => produce(state, draft=>
             break;
     }
 })
+
+
+
+const docsStateReducer = (state = docsState, action) => produce(state, draft=>{
+    const {exampleId = null, subId = null, newCode = null, gridItemId = null, gridItemCode = null,} = action.payload;
+    switch(action.type){
+        case type.MODIFY_GRID_CODE:
+            draft[exampleId].subExamples[subId].code = newCode;
+            break;
+        case type.MODIFY_GRID_ITEM_CODE:
+            draft[exampleId].subExamples[subId].gridItems[gridItemId].code = gridItemCode;
+            break;
+        case type.DELETE_GRID_ITEM:
+            draft[exampleId].subExamples[subId].gridItems[gridItemId] = state[exampleId].gridItems.filter(item=>item.gridItemId !== gridItemId);
+            break;
+        case type.ADD_GRID_ITEM:
+            const gridIndex = state[exampleId].gridItems.length - 1;
+            draft[exampleId].subExamples[subId].gridItems.push({gridItemId: gridIndex, code: ''})
+            break;
+        default:
+            break;
+    }
+})
+
 export default iconReducer;
