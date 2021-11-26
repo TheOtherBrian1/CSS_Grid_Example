@@ -42,7 +42,7 @@ export const actions = {
 const mainGridsState = [
     {
         exampleId: 0,
-        title: '',
+        title: 'milk',
         subtitle: '',
         text: '',
         mainGrid: {
@@ -57,25 +57,29 @@ const mainGridsState = [
     }
 ];
 
-const mainGridsReducer = (state = mainGridsState, action) =>  produce(state, draft=>{
-    const {exampleId = null, newCode = null, gridItemId = null, gridItemCode = null,} = action.payload;
-    switch(action.type){
-        case mainGridTypes.MODIFY_MAIN_GRID_CODE:
-            draft[exampleId].mainGrid.code = newCode;
-            break;
-        case mainGridTypes.MODIFY_MAIN_GRID_ITEM_CODE:
-            draft[exampleId].mainGrid.gridItems[gridItemId].code = gridItemCode;
-            break;
-        case mainGridTypes.DELETE_MAIN_GRID_ITEM:
-            draft[exampleId].mainGrid.gridItems[gridItemId] = state[exampleId].mainGrid.gridItems.filter(item=>item.gridItemId !== gridItemId);
-            break;
-        case mainGridTypes.ADD_MAIN_GRID_ITEM:
-            const gridIndex = state[exampleId].mainGrid.gridItems.length - 1;
-            draft[exampleId].mainGrid.gridItems.push({gridItemId: gridIndex, code: ''})
-            break;
-        default:
-            break;
-    }
-})
+const mainGridsReducer = (state = mainGridsState, action) => {
+    return (
+        produce(state, draft=>{
+            const pay = action.payload;
+            switch(action.type){
+                case mainGridTypes.MODIFY_MAIN_GRID_CODE:
+                    draft[pay.exampleId].mainGrid.code = pay.newCode;
+                    break;
+                case mainGridTypes.MODIFY_MAIN_GRID_ITEM_CODE:
+                    draft[pay.exampleId].mainGrid.gridItems[pay.gridItemId].code = pay.gridItemCode;
+                    break;
+                case mainGridTypes.DELETE_MAIN_GRID_ITEM:
+                    draft[pay.exampleId].mainGrid.gridItems.splice(pay.gridItemId, 1);
+                    break;
+                case mainGridTypes.ADD_MAIN_GRID_ITEM:
+                    const gridIndex = draft[pay.exampleId].mainGrid.gridItems.length - 1;
+                    draft[pay.exampleId].mainGrid.gridItems.push({gridItemId: gridIndex, code: ''})
+                    break;
+                default:
+                    break;
+            }
+        })
+    );
+}
 
 export default mainGridsReducer;

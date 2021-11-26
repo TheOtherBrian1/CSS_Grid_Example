@@ -23,7 +23,7 @@ const iconToggleState = [
     }
 ]
 
-const iconDisplayReducer = (state = iconToggleState, action) => produce(state, draft=>{
+const iconDisplayReducer = (state = iconToggleState, action) => produce((draft, action)=>{
     const {exampleId = null, icon = null} = action.payload;
     switch(action.type){
         case iconTypes.SELECT_ICON:

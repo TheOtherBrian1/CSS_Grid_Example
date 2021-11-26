@@ -72,8 +72,8 @@ const docsState = [
     }
 ];
 
-const docsStateReducer = (state = docsState, action) => produce(state, draft=>{
-        const {exampleId = null, subId = null, newCode = null, gridItemId = null, gridItemCode = null,} = action.payload;
+const docsStateReducer = (state = docsState, action) => produce((draft, action)=>{
+        const {exampleId = null, subId = null, newCode = null, gridItemId = null, gridItemCode = null} = action.payload;
         switch(action.type){
             case subGridTypes.MODIFY_GRID_CODE:
                 draft[exampleId].subExamples[subId].code = newCode;
