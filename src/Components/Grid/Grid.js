@@ -4,9 +4,8 @@ import React, {useRef} from 'react';
 import './Grid.css';
 import styled from 'styled-components'
 const GRID_COLORS = ['#dc97a9', '#f2cb7c', '#edaf88', '#d3bfb6', '#addad7', '#e5a88b', '#cf9683', '#cf7956', '#d16644', '#878f84', '#eedac2'];
-const gridItems = GRID_COLORS.slice(0,4).map(c=>`background:${c}`);
 
-
+/*
 const tempGrid = 
     {
         exampleId: 0,
@@ -23,28 +22,30 @@ const tempGrid =
         `,
         gridItems
     };
+*/
 
-const GridGenerator =({exampleId})=>{
-    const Grid = styled.div`${tempGrid.style}`;
+const GridGenerator =({initialHeight, initialWidth, code, gridItems, title})=>{
+    const Grid = styled.div`${code}`;
     const gridDimensions = useRef(null);
     return(
         <div style = {{display: 'inline-block'}}>
             <div className = "horizontal-width-display" style = {{width: gridDimensions.current?.offsetWidth}}>
-                <span className = 'grid-dimensions-style'>{gridDimensions.current?.offsetWidth  || tempGrid.initialWidth}</span>
+                <span className = 'grid-dimensions-style'>{gridDimensions.current?.offsetWidth  || initialWidth}</span>
                 <hr className = 'grid-hr'/>
             </div>
-            <div className = "hr-height-style" style = {{width: gridDimensions.current?.offsetHeight || 1}}>
-                <span>{gridDimensions.current?.offsetHeight}</span>
+            <div className = "hr-height-style" style = {{width: gridDimensions.current?.offsetHeight}}>
+                <span>{gridDimensions.current?.offsetHeight || initialHeight}</span>
                 <hr className = 'grid-hr'/>
             </div>
                 <Grid className = 'grid' ref = {gridDimensions}>
                     {
                         gridItems.map((style, i)=>{
-                            const GridItem = styled.div`${style}`;
+                            const GridItem = styled.div`${code}`;
                             return (
                                 <GridItem 
+                                    style = {{backgroundColor: GRID_COLORS[i]}}
                                     className = 'grid-item' 
-                                    key={`${i}`} 
+                                    key={`${i + title}`} 
                                     
                                 >
                                     {i}

@@ -49,21 +49,23 @@ const docsState = [
                 title: '',
                 text: '',
                 code: '',
+                initialHeight: '',
+                initialWidth: '',
                 gridItems: [
                     {
                         gridItemId: 0,
                         code: ''
                     },
                     {
-                        gridItemId: 0,
+                        gridItemId: 1,
                         code: ''
                     },
                     {
-                        gridItemId: 0,
+                        gridItemId: 2,
                         code: ''
                     },
                     {
-                        gridItemId: 0,
+                        gridItemId: 3,
                         code: ''
                     }
                 ]

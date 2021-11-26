@@ -46,6 +46,8 @@ const mainGridsState = [
         subtitle: '',
         text: '',
         mainGrid: {
+            initialHeight: '',
+            initialWidth: '',
             code: '',
             gridItems: [
                 {
