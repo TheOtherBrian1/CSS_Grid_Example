@@ -7,8 +7,7 @@ import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-css';
 import 'prismjs/themes/prism.css';
-import './CssEditor.css';
- 
+import './PopupEditor.css'; 
 
  
 const PopupEditor = ({exampleId, isGridItem})=>{

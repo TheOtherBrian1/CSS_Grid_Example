@@ -1,0 +1,9 @@
+.popup-editor-container{
+    position: absolute;
+    bottom: 200px;
+    z-index: 2;
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    overflow: scroll;
+}
