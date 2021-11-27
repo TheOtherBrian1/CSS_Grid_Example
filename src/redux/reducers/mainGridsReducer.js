@@ -5,7 +5,8 @@ const mainGridTypes = {
     MODIFY_MAIN_GRID_CODE: 'MODIFY_MAIN_GRID_CODE',
     MODIFY_MAIN_GRID_ITEM_CODE: 'MODIFY_MAIN_GRID_ITEM_CODE',
     DELETE_MAIN_GRID_ITEM: 'DELETE_MAIN_GRID_ITEM',
-    ADD_MAIN_GRID_ITEM: "ADD_MAIN_GRID_ITEM"
+    ADD_MAIN_GRID_ITEM: "ADD_MAIN_GRID_ITEM",
+    TOGGOLE_POPUP_EDITOR: "TOGGOLE_POPUP_EDITOR"
 };
 
 //payload = {exampleID, newCode}
@@ -20,7 +21,7 @@ const modifyMainGridItemCode = (payload)=>({
     payload
 })
 
-//payload = {exampleID, gridItemId}
+//payload = {exampleID}
 const deleteMainGridItem = (payload)=>({
     type: mainGridTypes.DELETE_MAIN_GRID_ITEM,
     payload
@@ -32,11 +33,12 @@ const addMainGridItem = (payload)=>({
     payload
 })
 
+
 export const actions = {
     modifyMainGridCode,
     modifyMainGridItemCode,
     deleteMainGridItem,
-    addMainGridItem
+    addMainGridItem,
 }
 
 const mainGridsState = [
@@ -83,6 +85,7 @@ const mainGridsReducer = (state = mainGridsState, action) => {
     return (
         produce(state, draft=>{
             const pay = action.payload;
+            console.log(pay);
             switch(action.type){
                 case mainGridTypes.MODIFY_MAIN_GRID_CODE:
                     draft[pay.exampleId].mainGrid.code = pay.newCode;
@@ -91,11 +94,13 @@ const mainGridsReducer = (state = mainGridsState, action) => {
                     draft[pay.exampleId].mainGrid.gridItems[pay.gridItemId].code = pay.gridItemCode;
                     break;
                 case mainGridTypes.DELETE_MAIN_GRID_ITEM:
-                    draft[pay.exampleId].mainGrid.gridItems.splice(pay.gridItemId, 1);
+                    console.log(pay.exampleId, 'delete');
+                    draft[pay.exampleId].mainGrid.gridItems.pop();
                     break;
                 case mainGridTypes.ADD_MAIN_GRID_ITEM:
-                    const gridIndex = draft[pay.exampleId].mainGrid.gridItems.length - 1;
-                    draft[pay.exampleId].mainGrid.gridItems.push({gridItemId: gridIndex, code: ''})
+                    console.log(pay.exampleId, 'add');
+                    const gridIndex = state[pay.exampleId].mainGrid.gridItems.length - 1;
+                    draft[pay.exampleId].mainGrid.gridItems.push({gridItemId: gridIndex, code: '/*place code here*/'})
                     break;
                 default:
                     break;

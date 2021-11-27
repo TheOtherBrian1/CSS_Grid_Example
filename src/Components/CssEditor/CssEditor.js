@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import Editor from 'react-simple-code-editor';
 import {actions} from '../../redux/reducers/mainGridsReducer';
 import { highlight, languages } from 'prismjs/components/prism-core';
+import {PlusCircleOutlined, MinusCircleOutlined} from '@ant-design/icons';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-css';
@@ -31,8 +32,9 @@ const CssEditor = ({exampleId})=>{
             </div>
             {
                 style.gridItems.map((item, i)=>
-                    <div className = "">
-                        Grid Item {i}
+                    <div key = {`${i}${exampleId}editor`}>
+                        Grid Item {i} 
+                        
                         <Editor
                             value={item.code}
                             onValueChange={code => dispatch(actions.modifyMainGridItemCode({exampleId, gridItemId: item.gridItemId, gridItemCode: code}))}
@@ -46,6 +48,22 @@ const CssEditor = ({exampleId})=>{
                     </div>
                 )
             }
+            <div className = "grid-modifier-container">
+                <label 
+                    className = "grid-icon-modifier"
+                    onClick = {()=>dispatch(actions.addMainGridItem({exampleId}))}
+                >   
+                    Remove
+                    <MinusCircleOutlined style = {{margin: 10, color:"#eb2f96"}} />
+                </label>
+                <label 
+                    className = "grid-icon-modifier"
+                    onClick = {()=>dispatch(actions.deleteMainGridItem({exampleId}))}
+                >
+                    Add
+                    <PlusCircleOutlined style = {{margin: 10, color:"#52c41a"}} />
+                </label>
+            </div>
         </div>
     );
 }
