@@ -7,6 +7,7 @@ import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-css';
 import 'prismjs/themes/prism.css';
+import './CssEditor.css';
  
 
  
@@ -14,7 +15,7 @@ const CssEditor = ({exampleId})=>{
     const dispatch = useDispatch();
     const style = useSelector(state=>state.mainGridsReducer[exampleId].mainGrid);
     return (
-        <div className = "">
+        <div className = "editor-container">
             <div className = "">
                 Grid
                 <Editor

@@ -60,19 +60,19 @@ grid:
             gridItems: [
                 {
                     gridItemId: 0,
-                    code: ''
+                    code: '/*Place code here*/'
                 },
                 {
                     gridItemId: 1,
-                    code: ''
+                    code: '/*Place code here*/'
                 },
                 {
                     gridItemId: 2,
-                    code: ''
+                    code: '/*Place code here*/'
                 },
                 {
                     gridItemId: 3,
-                    code: ''
+                    code: '/*Place code here*/'
                 }
             ]
         }

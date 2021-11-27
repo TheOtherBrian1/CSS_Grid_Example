@@ -50,10 +50,18 @@ const Example = ({exampleId})=>{
                         </span>
                     </div>
             </div>
-            <CssEditor exampleId = {exampleId} />
+            {
+                iconState.selectedIcon === 'CSS'
+                    &&
+                <CssEditor exampleId = {exampleId} />
+            }
+            {
+                iconState.selectedIcon === 'Docs'
+                    &&
                 <div>
                     <Docs exampleId = {exampleId}/>
                 </div>
+            }
             <section className = "example-main-visual">
                 <GridGenerator
                     initialHeight = {state.mainGrid.initialHeight}
@@ -61,6 +69,7 @@ const Example = ({exampleId})=>{
                     code = {state.mainGrid.code}
                     title = {state.title}
                     gridItems = {state.mainGrid.gridItems}
+                    exampleId = {exampleId}
                 />
             </section>
         </div>
