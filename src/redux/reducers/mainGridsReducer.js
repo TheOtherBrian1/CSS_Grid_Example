@@ -60,6 +60,18 @@ const mainGridsState = [
                 {
                     gridItemId: 0,
                     code: ''
+                },
+                {
+                    gridItemId: 1,
+                    code: ''
+                },
+                {
+                    gridItemId: 2,
+                    code: ''
+                },
+                {
+                    gridItemId: 3,
+                    code: ''
                 }
             ]
         }

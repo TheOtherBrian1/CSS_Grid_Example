@@ -50,7 +50,7 @@ const Example = ({exampleId})=>{
                         </span>
                     </div>
             </div>
-            <CssEditor />
+            <CssEditor exampleId = {exampleId} />
                 <div>
                     <Docs exampleId = {exampleId}/>
                 </div>

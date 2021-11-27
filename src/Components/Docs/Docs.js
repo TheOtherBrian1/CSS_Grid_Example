@@ -21,8 +21,8 @@ const Docs = ({exampleId})=>{
                                 </Card>
                                 <div className = "card card-grid">
                                     <GridGenerator 
-                                        initialHeight = {exmp.initalHeight}
-                                        initialWidth = {exmp.initalWidth}
+                                        initialHeight = {exmp.initialHeight}
+                                        initialWidth = {exmp.initialWidth}
                                         code = {exmp.code}
                                         gridItems = {exmp.gridItems}
                                         title = {exmp.title}

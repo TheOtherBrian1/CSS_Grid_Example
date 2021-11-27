@@ -46,18 +46,18 @@ const docsState = [
         subExamples:[
            {
                 subId: 0,
-                title: 'milk',
+                title: 'lint',
                 text: 'yellow brick for male catiness',
                 code: `
                 position: relative;
                 display: grid;
                 grid: 
-                    "1      2" 100px
-                    "3      4" 100px
-                    /100px 100px;
+                    "1      2" 50px
+                    "3      4" 50px
+                    /50px 50px;
                 `,
-                initialHeight: '200',
-                initialWidth: '200',
+                initialHeight: '100',
+                initialWidth: '100',
                 gridItems: [
                     {
                         gridItemId: 0,
