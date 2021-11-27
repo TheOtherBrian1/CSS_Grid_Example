@@ -43,12 +43,19 @@ const mainGridsState = [
     {
         exampleId: 0,
         title: 'milk',
-        subtitle: '',
-        text: '',
+        subtitle: 'raisin  butter',
+        text: 'evil pandas',
         mainGrid: {
-            initialHeight: '',
-            initialWidth: '',
-            code: '',
+            initialHeight: '200',
+            initialWidth: '200',
+            code: `
+            position: relative;
+            display: grid;
+            grid: 
+                "1      2" 100px
+                "3      4" 100px
+                /100px 100px;
+            `,
             gridItems: [
                 {
                     gridItemId: 0,

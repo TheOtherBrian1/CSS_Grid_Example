@@ -5,24 +5,7 @@ import './Grid.css';
 import styled from 'styled-components'
 const GRID_COLORS = ['#dc97a9', '#f2cb7c', '#edaf88', '#d3bfb6', '#addad7', '#e5a88b', '#cf9683', '#cf7956', '#d16644', '#878f84', '#eedac2'];
 
-/*
-const tempGrid = 
-    {
-        exampleId: 0,
-        gridId: 0,
-        initialHeight: 100,
-        initialWidth: 100,
-        style: `
-        position: relative;
-        display: grid;
-        grid: 
-            "1      2" 100px
-            "3      4" 100px
-            /100px 100px;
-        `,
-        gridItems
-    };
-*/
+
 
 const GridGenerator =({initialHeight, initialWidth, code, gridItems, title})=>{
     const Grid = styled.div`${code}`;

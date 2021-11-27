@@ -46,11 +46,18 @@ const docsState = [
         subExamples:[
            {
                 subId: 0,
-                title: '',
-                text: '',
-                code: '',
-                initialHeight: '',
-                initialWidth: '',
+                title: 'milk',
+                text: 'yellow brick for male catiness',
+                code: `
+                position: relative;
+                display: grid;
+                grid: 
+                    "1      2" 100px
+                    "3      4" 100px
+                    /100px 100px;
+                `,
+                initialHeight: '200',
+                initialWidth: '200',
                 gridItems: [
                     {
                         gridItemId: 0,
@@ -100,3 +107,24 @@ const docsStateReducer = (state = docsState, action) => {
 )};
 
 export default docsStateReducer;
+
+
+
+/*
+const tempGrid = 
+    {
+        exampleId: 0,
+        gridId: 0,
+        initialHeight: 100,
+        initialWidth: 100,
+        style: `
+        position: relative;
+        display: grid;
+        grid: 
+            "1      2" 100px
+            "3      4" 100px
+            /100px 100px;
+        `,
+        gridItems
+    };
+*/

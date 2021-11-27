@@ -5,10 +5,10 @@ import {actions} from '../../redux/reducers/docsStateReducer';
 import './Docs.css';
 import GridGenerator from '../Grid/Grid';
 
-const Docs = ()=>{
+const Docs = ({exampleId})=>{
     //does require exampleId
-    const dispatch = useDispatch();
-    const state = useSelector(state=>state.docsStateReducer[0]);
+    //const dispatch = useDispatch();
+    const state = useSelector(state=>state.docsStateReducer[exampleId]);
     return(
         <div className = "carousel">
             {
@@ -20,7 +20,13 @@ const Docs = ()=>{
                                     {exmp.text}
                                 </Card>
                                 <div className = "card card-grid">
-                                    <GridGenerator />
+                                    <GridGenerator 
+                                        initialHeight = {exmp.initalHeight}
+                                        initialWidth = {exmp.initalWidth}
+                                        code = {exmp.code}
+                                        gridItems = {exmp.gridItems}
+                                        title = {exmp.title}
+                                    />
                                 </div>
                             </div>
                     </React.Fragment>

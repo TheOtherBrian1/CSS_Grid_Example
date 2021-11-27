@@ -10,25 +10,30 @@ import Docs from '../Docs/Docs';
 
 const chooseCSS = (selectedIcon, icon)=>`drop-down-icons ${selectedIcon === icon?'icon-selected':''}`;
 
-const Example = ()=>{
+const Example = ({exampleId})=>{
     //YOU WILL REQUIRE AN EXAMPLE ID FOR THIS. THIS IS PROBABLY BEST PASSED AS A PROP
     const dispatch = useDispatch();
-    const state = useSelector(state=>state.iconDisplayReducer[0]);
+    const state = useSelector(state=>state.mainGridsReducer[exampleId]);
+    const iconState = useSelector(state=>state.iconDisplayReducer[exampleId]);
+    console.log(state, 'milk');
     return (
         <div className = "example-container">
             <div className = 'example-title-container'>
                 <h2 className = "example-title">
-                    Basic Grid: 
+                    {state.title}
                 </h2>
                 <span className = "example-subtitle">
-                    Hello everyone can you dig it
+                    {state.subtitle}
                 </span>
             </div>
+            <p>
+                {state.text}
+            </p>
             <hr />
             <div className = "example-documentation">
                     <div 
-                        className = {chooseCSS(state.selectedIcon, 'CSS')}
-                        onClick={()=>dispatch(actions.toggleIcon({exampleId:state.exampleId, selectedIcon: 'CSS'}))}
+                        className = {chooseCSS(iconState.selectedIcon, 'CSS')}
+                        onClick={()=>dispatch(actions.toggleIcon({exampleId:iconState.exampleId, selectedIcon: 'CSS'}))}
                     >
                         <CodeOutlined style = {{color:"#A9A9A9", fontSize: 24}} />
                         <span className = "drop-down-subtitle">
@@ -36,8 +41,8 @@ const Example = ()=>{
                         </span>
                     </div>
                     <div 
-                        className = {chooseCSS(state.selectedIcon, 'Docs')}
-                        onClick = {()=>dispatch(actions.toggleIcon({exampleId:state.exampleId, selectedIcon: 'Docs'}))}
+                        className = {chooseCSS(iconState.selectedIcon, 'Docs')}
+                        onClick = {()=>dispatch(actions.toggleIcon({exampleId:iconState.exampleId, selectedIcon: 'Docs'}))}
                     >
                         <FileTextOutlined style = {{color:"#A9A9A9", fontSize: 24}} />
                         <span className = "drop-down-subtitle">
@@ -47,10 +52,16 @@ const Example = ()=>{
             </div>
             <CssEditor />
                 <div>
-                    <Docs></Docs>
+                    <Docs exampleId = {exampleId}/>
                 </div>
             <section className = "example-main-visual">
-                <GridGenerator />
+                <GridGenerator
+                    initialHeight = {state.mainGrid.initialHeight}
+                    initialWidth = {state.mainGrid.initialWidth}
+                    code = {state.mainGrid.code}
+                    title = {state.title}
+                    gridItems = {state.mainGrid.gridItems}
+                />
             </section>
         </div>
     )
