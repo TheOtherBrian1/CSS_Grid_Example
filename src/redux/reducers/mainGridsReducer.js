@@ -48,14 +48,15 @@ const mainGridsState = [
         mainGrid: {
             initialHeight: '200',
             initialWidth: '200',
-            code: `
-            position: relative;
-            display: grid;
-            grid: 
-                "1      2" 100px
-                "3      4" 100px
-                /100px 100px;
-            `,
+            code: 
+`
+position: relative;
+display: grid;
+grid: 
+    "1      2" 100px
+    "3      4" 100px
+    /100px 100px;
+`,
             gridItems: [
                 {
                     gridItemId: 0,

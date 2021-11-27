@@ -40,6 +40,6 @@
 }
 
 .grid-container{
-    display: 'inline-block';
+    display: block;
     
 }
