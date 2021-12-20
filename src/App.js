@@ -1,13 +1,11 @@
 import React from 'react';
-import Example from './Components/Example/Example';
+import Section from './Components/Section/Section';
 
 const App = () => {
 
     return (
-      <div style = {{width: 400}} className="App">
-        <Example exampleId = {0}/>
-      </div>
-  );
+      <Section />
+    );
 }
 
 

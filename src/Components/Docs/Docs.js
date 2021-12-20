@@ -1,18 +1,13 @@
 import React from 'react';
 import {Card} from 'antd';
-import {useSelector, useDispatch} from 'react-redux';
-import {actions} from '../../redux/reducers/docsStateReducer';
 import './Docs.css';
 import GridGenerator from '../Grid/Grid';
 
-const Docs = ({exampleId})=>{
-    //does require exampleId
-    //const dispatch = useDispatch();
-    const state = useSelector(state=>state.docsStateReducer[exampleId]);
+const Docs = ({docGrids, index})=>{
     return(
         <div className = "carousel">
             {
-                state.subExamples.map((exmp, i)=>
+                docGrids.subExamples.map((exmp, i)=>
                     <React.Fragment key = {exmp.title}>
                             <div className = "card-wrapper">
                                 <Card bordered = {false} title = {exmp.title} className = "card explanation">

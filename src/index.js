@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import combinedReducers from './redux/reducers/combinedReducers';
+import reducer from './redux/reducer';
 
-const store = createStore(combinedReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 ReactDOM.render(
   <React.StrictMode>
     <Provider store = {store}>
