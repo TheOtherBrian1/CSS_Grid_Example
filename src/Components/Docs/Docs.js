@@ -7,8 +7,8 @@ const Docs = ({docGrids, index})=>{
     return(
         <div className = "carousel">
             {
-                docGrids.subExamples.map((exmp, i)=>
-                    <React.Fragment key = {exmp.title}>
+                docGrids.map((exmp, i)=>
+                    <React.Fragment key = {exmp.title + 'example'}>
                             <div className = "card-wrapper">
                                 <Card bordered = {false} title = {exmp.title} className = "card explanation">
                                     <hr />

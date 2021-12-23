@@ -30,13 +30,13 @@ const CssEditor = ({index, style})=>{
                 />
             </div>
             {
-                style.gridItems.map((item, i)=>
-                    <div key = {`${i}${index}editor`}>
-                        Grid Item {i} 
+                style.gridItems.map((item, itemIndex)=>
+                    <div key = {`${itemIndex}${index}editor`}>
+                        Grid Item {itemIndex} 
                         
                         <Editor
                             value={item.code}
-                            onValueChange={code => dispatch(mainGridActions.modifyMainGridItemCode({index, gridItemId: item.gridItemId, gridItemCode: code}))}
+                            onValueChange={code => dispatch(mainGridActions.modifyMainGridItemCode({index, gridItemIndex: itemIndex, newCode: code}))}
                             highlight={j => highlight(item.code, languages.css)}
                             padding={10}
                             style={{
@@ -48,20 +48,30 @@ const CssEditor = ({index, style})=>{
                 )
             }
             <div className = "grid-modifier-container">
-                <label 
-                    className = "grid-icon-modifier"
-                    onClick = {()=>dispatch(mainGridActions.addMainGridItem({index}))}
-                >   
-                    Remove
-                    <MinusCircleOutlined style = {{margin: 10, color:"#eb2f96"}} />
-                </label>
-                <label 
-                    className = "grid-icon-modifier"
-                    onClick = {()=>dispatch(mainGridActions.deleteMainGridItem({index}))}
-                >
-                    Add
-                    <PlusCircleOutlined style = {{margin: 10, color:"#52c41a"}} />
-                </label>
+                {   
+                    style.gridItems.length > 4 
+                        &&
+                    <label 
+                        className = "grid-icon-modifier"
+                        onClick = {()=>dispatch(mainGridActions.deleteMainGridItem({index}))}
+                    >  
+                
+                        Remove
+                        <MinusCircleOutlined style = {{margin: 10, color:"#eb2f96"}} />
+                     </label>
+                }
+                {
+                    style.gridItems.length <= 11 
+                        &&
+                    <label 
+                        id = 'scroll-to'
+                        className = "grid-icon-modifier"
+                        onClick = {()=>dispatch(mainGridActions.addMainGridItem({index}))}
+                    >
+                            Add
+                        <PlusCircleOutlined style = {{margin: 10, color:"#52c41a"}} />
+                    </label>
+                }
             </div>
         </div>
     );

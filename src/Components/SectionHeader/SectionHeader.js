@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SectionHeader = (title, subtitle, text)=>{
+const SectionHeader = ({title, subtitle, text})=>{
     return(
         <>
             <div className = 'example-title-container'>

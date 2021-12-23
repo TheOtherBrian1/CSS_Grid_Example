@@ -6,14 +6,13 @@ import {toggleActions} from '../../redux/actions';
 const chooseCSS = (selectedIcon, icon)=>`drop-down-icons ${selectedIcon === icon?'icon-selected':''}`;
 
 
-const ToggleDocsOrCSSEditor = (toggle, index)=>{
+const ToggleDocsOrCSSEditor = ({toggle, index})=>{
     const dispatch = useDispatch();
-
     return(
         <div className = "example-documentation">
                 <div 
                     className = {chooseCSS(toggle.selectedIcon, 'CSS')}
-                    onClick={()=>dispatch(toggleActions.toggleIcon({exampleId: index, selectedIcon: 'CSS'}))}
+                    onClick={()=>dispatch(toggleActions.toggleIcon({index, icon: 'CSS'}))}
                 >
                     <CodeOutlined style = {{color:"#A9A9A9", fontSize: 24}} />
                     <span className = "drop-down-subtitle">
@@ -22,7 +21,7 @@ const ToggleDocsOrCSSEditor = (toggle, index)=>{
                 </div>
                 <div 
                     className = {chooseCSS(toggle.selectedIcon, 'Docs')}
-                    onClick = {()=>dispatch(toggleActions.toggleIcon({exampleId:index, selectedIcon: 'Docs'}))}
+                    onClick = {()=>dispatch(toggleActions.toggleIcon({index, icon: 'Docs'}))}
                 >
                     <FileTextOutlined style = {{color:"#A9A9A9", fontSize: 24}} />
                     <span className = "drop-down-subtitle">
