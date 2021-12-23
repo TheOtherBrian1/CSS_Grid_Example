@@ -1,5 +1,6 @@
 export const defaultState = [
     {
+        //First section
         mainGrid:{
             title: 'Fixed Grid Templates:',
             subtitle: 'Build grids with fixed dimensions in mind',
@@ -127,11 +128,12 @@ export const defaultState = [
         ]
     },
 
+    //second section
     {
         mainGrid:{
-            title: 'milk',
-            subtitle: 'raisin  butter',
-            text: 'evil pandas',
+            title: 'Grid Cells Spanning Multiple columns/rows:',
+            subtitle: 'How to have grid cells take up multiple columns and rows',
+            text: "As long as a grid is somewhat defined, you can designate certain grid-items to take up multiple columns/rows",
             mainGrid: {
                 initialHeight: '200',
                 initialWidth: '200',
@@ -140,23 +142,23 @@ export const defaultState = [
     position: relative;
     display: grid;
     grid: 
-        "1      2" 100px
-        "3      4" 100px
-        /100px 100px;
+        "a      b     c" 100px
+        "a      d     d" 100px
+        /50px 100px 50px;
     `,
                 gridItems: [
                     {
-                        code: '/*Place code here*/'
+                        code: 'grid-area: a'
                     },
                     {
-                        code: '/*Place code here*/'
+                        code: 'grid-area: b'
                     },
                     {
-                        code: '/*Place code here*/'
+                        code: 'grid-area: c'
                     },
                     {
-                        code: '/*Place code here*/'
-                    }
+                        code: 'grid-area: d'
+                    },
                 ]
             }
         },
@@ -167,174 +169,116 @@ export const defaultState = [
 
         docGrids:[
            {
-                title: 'lint',
-                text: 'yellow brick for male catiness',
+                title: 'Grid line model',
+                text: "Grids have an x and y axis. The first line for both axises of the grid is labeled one, followed by two, and so fourth. It's possible to span a cell from one grid line to another",
                 code: `
                     position: relative;
                     display: grid;
-                    grid: 
-                        "1      2" 50px
-                        "3      4" 50px
-                        /50px 50px;
+                    grid-template-columns: 50px 50px;
+                    grid-template-rows: 50px 50px;
                 `,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
                     {
-                        code: ''
+                        code: 'grid-column: 1/2;\n grid-row:1/3'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
-                    },
-                    {
-                        code: ''
+                        code: '/*insert code here*/'
                     }
                 ]
             },
-        ]
-    },
 
-
-    {
-        mainGrid:{
-            title: 'milk',
-            subtitle: 'raisin  butter',
-            text: 'evil pandas',
-            mainGrid: {
-                initialHeight: '200',
-                initialWidth: '200',
-                code: 
-    `
-    position: relative;
-    display: grid;
-    grid: 
-        "1      2" 100px
-        "3      4" 100px
-        /100px 100px;
-    `,
-                gridItems: [
-                    {
-                        code: '/*Place code here*/'
-                    },
-                    {
-                        code: '/*Place code here*/'
-                    },
-                    {
-                        code: '/*Place code here*/'
-                    },
-                    {
-                        code: '/*Place code here*/'
-                    }
-                ]
-            }
-        },
-
-        toggle:{
-            selectedIcon: null,
-        },
-
-        docGrids:[
-           {
-                title: 'lint',
-                text: 'yellow brick for male catiness',
+            {
+                title: 'Grid line model Cont.',
+                text: "There's a short hand called 'span' that tells CSS how many grid lines your grid-item should span",
                 code: `
                     position: relative;
                     display: grid;
-                    grid: 
-                        "1      2" 50px
-                        "3      4" 50px
-                        /50px 50px;
+                    grid-template-columns: 50px 50px;
+                    grid-template-rows: 50px 50px;
                 `,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
                     {
-                        code: ''
+                        code: '/*Starts at column line 1. Spans 2 lines to the left*/\ngrid-column: 1/ span 2'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
-                    {
-                        code: ''
-                    },
-                    {
-                        code: ''
-                    }
+                    
                 ]
             },
-        ]
-    },
-
-    {
-        mainGrid:{
-            title: 'milk',
-            subtitle: 'raisin  butter',
-            text: 'evil pandas',
-            mainGrid: {
-                initialHeight: '200',
-                initialWidth: '200',
-                code: 
-    `
-    position: relative;
-    display: grid;
-    grid: 
-        "1      2" 100px
-        "3      4" 100px
-        /100px 100px;
-    `,
-                gridItems: [
-                    {
-                        code: '/*Place code here*/'
-                    },
-                    {
-                        code: '/*Place code here*/'
-                    },
-                    {
-                        code: '/*Place code here*/'
-                    },
-                    {
-                        code: '/*Place code here*/'
-                    }
-                ]
-            }
-        },
-
-        toggle:{
-            selectedIcon: null,
-        },
-
-        docGrids:[
-           {
-                title: 'lint',
-                text: 'yellow brick for male catiness',
+            {
+                title: 'Span grid lines explicitly.',
+                text: "If you chose to name you grid cells with grid, you can explicitly label which cells your grid-items should occupy",
                 code: `
                     position: relative;
                     display: grid;
-                    grid: 
-                        "1      2" 50px
-                        "3      4" 50px
-                        /50px 50px;
+                    grid: "a    b" 50px
+                          "a    b" 50px
+                        / 50px  50px
                 `,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
                     {
-                        code: ''
+                        code: 'grid-area: a'
                     },
                     {
-                        code: ''
+                        code: 'grid-area: b'
+                    },
+                   
+                ]
+            },
+            {
+                title: 'Span grids using grid lines',
+                text: "Grids have an x and y axis. The first line for both axises of the grid is labeled one, followed by two, and so fourth. It's possible to span a cell from one grid line to another",
+                code: `
+                    position: relative;
+                    display: grid;
+                    grid-template-columns: 50px 50px;
+                    grid-template-rows: 50px 50px 50px;
+                `,
+                initialHeight: '100',
+                initialWidth: '100',
+                gridItems: [
+                    {
+                        code: 'grid-column: 1/2;\n grid-row:1/3'
                     },
                     {
-                        code: ''
+                        code: '/*column-start / row-start / column-end / grid-end;*/\ngrid-area: 1 / 2 / 3 / 3;'
                     },
                     {
-                        code: ''
+                        code: 'grid-column:span 2'
                     }
                 ]
             },
+            {
+                title: 'Name grid lines for spanning',
+                text: "Just like how you can name grid cells, you can also name grid lines",
+                code: `
+                    position: relative;
+                    display: grid;
+                    grid-template-columns: [col-start] 50px [col-middle] 50px [col-end];
+                    grid-template-rows: [row-start] 50px [row-middle] 50px [row-end];
+                `,
+                initialHeight: '100',
+                initialWidth: '100',
+                gridItems: [
+                    {
+                        code: 'grid-column: col-start / col-end;\n grid-row: row-start / row-middle'
+                    },
+                    {
+                        code: 'grid-column: col-start / col-end;\n grid-row: row-middle / row-end'
+                    }
+                ]
+            },
+            
         ]
     }
 
