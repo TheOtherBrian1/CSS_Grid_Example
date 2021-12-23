@@ -131,6 +131,84 @@ export const defaultState = [
     //second section
     {
         mainGrid:{
+            title: 'Grid Units:',
+            subtitle: 'How to use the "fr" unit',
+            text: "Grids can use all basic units, like percentages, px, vmin, etc. However, they also can use the fr unit. any cell with the fr unit will take up all remaining space available, unless their is another cell with the unit. When there are 2 cells with fr units, let's say cell one takes up '1fr' and cell two takes up '2fr' then they will split the remaining space based off their relative ratios to each other.",
+            mainGrid: {
+                initialHeight: '100',
+                initialWidth: '300',
+                code: 
+    `
+    position: relative;
+    display: grid;
+    width: 300px;
+
+    /*fr units are fractional. They will expand to take up whatever space is available*/
+    grid-template-columns: 1fr 2fr 3fr 50px;
+    grid-template-rows: 100px;
+    `,
+                gridItems: [
+                    {
+                        code: '/*insert code here*/'
+                    },
+                    {
+                        code: '/*insert code here*/'
+                    },
+                    {
+                        code: '/*insert code here*/'
+                    },
+                    {
+                        code: '/*insert code here*/'
+                    }
+                ]
+            }
+        },
+
+        toggle:{
+            selectedIcon: null,
+        },
+
+        docGrids:[
+            {
+                title: 'Basic example of Units',
+                text: "",
+                code: `
+                    position: relative;
+                    display: grid;
+                    width: 150px;
+                    grid-template-columns: 30% 50px 1fr 1fr;
+                    grid-template-rows: 100px
+                `,
+                initialHeight: '100',
+                initialWidth: '100',
+                gridItems: [
+                    {
+                        code: '/*insert code here*/'
+                    },
+                    {
+                        code: '/*insert code here*/'
+                    },
+                    {
+                        code: '/*insert code here*/'
+                    },
+                    {
+                        code: '/*insert code here*/'
+                    }
+                ]
+            },
+            
+        ]
+    },
+
+
+
+
+
+
+
+    //third section
+    {
+        mainGrid:{
             title: 'Grid Cells Spanning Multiple columns/rows:',
             subtitle: 'How to have grid cells take up multiple columns and rows',
             text: "As long as a grid is somewhat defined, you can designate certain grid-items to take up multiple columns/rows",
@@ -280,6 +358,353 @@ export const defaultState = [
             },
             
         ]
-    }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //fourth section
+
+        {
+            mainGrid:{
+                title: 'Auto-Resizing Grids for Dynamic Content:',
+                subtitle: ' Program your grid to gracefully grow and shrink for new content',
+                text: "Grids come with 4 special functions/keywords that allow them to grow, shrink, and dynamically add new content: 'repeat', 'auto-fill', 'auto-fix', 'minmax'",
+                mainGrid: {
+                    initialHeight: '300',
+                    initialWidth: '300',
+                    code: 
+        `
+        position: relative;
+        width: 80%;
+        display: grid;
+
+/*Will create as many new columns as possible. If there is extra space in a row, it will fillit with invisible grid-items*/
+
+            grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+
+/*Will create as many new columns as possible. If there is extra space in a row, it will try to stretch the remaining grid-items to fill the space*/
+    
+            /*grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));*/
+            
+        grid-template-rows: 100px;
+        `,
+                    gridItems: [
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                    ]
+                }
+            },
+    
+            toggle:{
+                selectedIcon: null,
+            },
+    
+            docGrids:[
+               {
+                    title: 'The minmax function',
+                    text: "minmax takes two arguments: (min-size, max-size). It defines how much a grid-item can grow or shrink",
+                    code: `
+                        position: relative;
+                        display: grid;
+                        grid-template-columns: 50px minmax(20px, 1fr);
+                    `,
+                    initialHeight: '100',
+                    initialWidth: '100',
+                    gridItems: [
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        }
+                    ]
+                },     
+                {
+                    title: 'The repeat function',
+                    text: "repeat takes two arguments: (number of items/auto-fit/auto-fill, width or height of column/row). It can be used to specify a finite amount of rows or colums. When used with auto-fill or auto-fit, it can be ",
+                    code: `
+                        position: relative;
+                        display: grid;
+                        grid-template-columns: repeat(3, 50px);
+                    `,
+                    initialHeight: '100',
+                    initialWidth: '100',
+                    gridItems: [
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        }
+                    ]
+                },
+                {
+                    title: 'The autofill function',
+                    text: "A repeat function set to auto-fill will fill any extra space with invisible grid-items.",
+                    code: `
+                        position: relative;
+                        width: 50%;
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+                    `,
+                    initialHeight: '100',
+                    initialWidth: '100',
+                    gridItems: [
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        }
+                    ]
+                },
+                {
+                    title: 'The auto-fill function',
+                    text: "A repeat function set to auto-fill will fill any extra space with invisible grid-items.",
+                    code: `
+                        position: relative;
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+                    `,
+                    initialHeight: '100',
+                    initialWidth: '100',
+                    gridItems: [
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        }
+
+                    ]
+                },
+                {
+                    title: 'The auto-fit function',
+                    text: "A repeat function set to auto-fit will stretch its grid-items as much as permitted to fill any extra space before allowing one to wrap around.",
+                    code: `
+                        position: relative;
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+                    `,
+                    initialHeight: '100',
+                    initialWidth: '100',
+                    gridItems: [
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        }
+                    ]
+                },
+            ]
+        },
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //fifth section
+
+        {
+            mainGrid:{
+                title: 'Aligning Content:',
+                subtitle: "Orient your grid's content",
+                text: "Grids use justify-items and align-items, as well as align-self and justify-self, to position grid items' content",
+                mainGrid: {
+                    initialHeight: '200',
+                    initialWidth: '200',
+                    code: 
+        `
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-auto-rows: 100px;
+        justify-content: center;
+        align-items: end;
+        justify-items: center;
+        `,
+                    gridItems: [
+                        {
+                            code: 'justify-self: end'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: 'align-self: center'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                    ]
+                }
+            },
+    
+            toggle:{
+                selectedIcon: null,
+            },
+    
+            docGrids:[
+                {
+                    title: 'The auto-fit function',
+                    text: "A repeat function set to auto-fit will stretch its grid-items as much as permitted to fill any extra space before allowing one to wrap around.",
+                    code: `
+                        position: relative;
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+                    `,
+                    initialHeight: '100',
+                    initialWidth: '100',
+                    gridItems: [
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        }
+                    ]
+                },
+            ]
+        },
+  
 
 ];
