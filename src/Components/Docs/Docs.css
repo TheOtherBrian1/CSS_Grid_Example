@@ -34,3 +34,7 @@
     background-color: azure;
     scrollbar-width: thin;
 }
+
+.panel{
+    background-color: rgb(236, 233, 233);
+}

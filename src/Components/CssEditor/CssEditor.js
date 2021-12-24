@@ -12,7 +12,7 @@ import './CssEditor.css';
  
 
  
-const CssEditor = ({index, style})=>{
+const CssEditor = ({index, style, disable = true})=>{
     const dispatch = useDispatch();
     return (
         <div className = "editor-container">
@@ -20,7 +20,10 @@ const CssEditor = ({index, style})=>{
                 Grid
                 <Editor
                     value={style.code}
-                    onValueChange={code => dispatch(mainGridActions.modifyMainGridCode({index, newCode: code}))}
+                    onValueChange={code => 
+                        !disable
+                            &&
+                        dispatch(mainGridActions.modifyMainGridCode({index, newCode: code}))}
                     highlight={j => highlight(style.code, languages.css)}
                     padding={10}
                     style={{
@@ -47,7 +50,7 @@ const CssEditor = ({index, style})=>{
                     </div>
                 )
             }
-            <div className = "grid-modifier-container">
+            {disable && <div className = "grid-modifier-container">
                 {   
                     style.gridItems.length > 4 
                         &&
@@ -72,7 +75,7 @@ const CssEditor = ({index, style})=>{
                         <PlusCircleOutlined style = {{margin: 10, color:"#52c41a"}} />
                     </label>
                 }
-            </div>
+            </div>}
         </div>
     );
 }
