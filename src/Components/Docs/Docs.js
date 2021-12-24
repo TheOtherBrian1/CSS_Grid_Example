@@ -16,7 +16,7 @@ const Docs = ({docGrids, index})=>{
                             <div className = "card-wrapper">
                                 <Card bordered = {false} title = {exmp.title} className = "card explanation">
                                     <hr />
-                                    <Collapse accordion = {true} defaultActiveKey={['one']} onChange={(e)=>console.log(e)}>                        
+                                    <Collapse accordion = {true} onChange={(e)=>console.log(e)}>                        
                                         <Panel header="code" className = "panel" key = "one">
                                             <CssEditor disable = {true} style = {exmp}/>
                                         </Panel>

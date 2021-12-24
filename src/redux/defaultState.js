@@ -35,7 +35,7 @@ export const defaultState = [
         },
 
         toggle:{
-            selectedIcon: null,
+            selectedIcon: "docs",
         },
 
         docGrids:[
@@ -165,7 +165,7 @@ export const defaultState = [
         },
 
         toggle:{
-            selectedIcon: null,
+            selectedIcon: "docs",
         },
 
         docGrids:[
@@ -242,7 +242,7 @@ export const defaultState = [
         },
 
         toggle:{
-            selectedIcon: null,
+            selectedIcon: "docs",
         },
 
         docGrids:[
@@ -442,7 +442,7 @@ export const defaultState = [
             },
     
             toggle:{
-                selectedIcon: null,
+                selectedIcon: "docs",
             },
     
             docGrids:[
@@ -658,7 +658,7 @@ export const defaultState = [
             },
     
             toggle:{
-                selectedIcon: null,
+                selectedIcon: "docs",
             },
     
             docGrids:[
@@ -794,7 +794,7 @@ export const defaultState = [
             },
     
             toggle:{
-                selectedIcon: null,
+                selectedIcon: "docs",
             },
     
             docGrids:[

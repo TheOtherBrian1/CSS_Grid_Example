@@ -2,10 +2,13 @@
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    max-width: 960px;
+    width: clamp(400px, 60%, 960px);
     min-height: 300px;
     padding: 20px;
     color: rgb(51, 68, 85);
+    margin-bottom: 10px;
+    margin: 30px auto;
+    background-color:white;
     box-shadow: rgba(85, 102, 119, 0.03) 0px 6px 8px 0px, rgba(85, 102, 119, 0.4) 0px 1px 1px 0px
 }
 .example-title{
@@ -26,4 +29,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.example-organizer{
+    margin: auto;
+    padding-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
