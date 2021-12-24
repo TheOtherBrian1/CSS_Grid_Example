@@ -663,13 +663,16 @@ export const defaultState = [
     
             docGrids:[
                 {
-                    title: 'The auto-fit function',
-                    text: "A repeat function set to auto-fit will stretch its grid-items as much as permitted to fill any extra space before allowing one to wrap around.",
+                    title: 'justify-content and align-items',
+                    text: "The justify-items and align-items respectively center grid content from the x and y axis",
                     code: `
                         position: relative;
                         width: 100%;
                         display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+                        grid-template-columns: repeat(4, minmax(50px, 1fr));
+                        grid-auto-rows: 50px;
+                        justify-items: center;
+                        align-items: center;
                     `,
                     initialHeight: '100',
                     initialWidth: '100',
@@ -691,6 +694,31 @@ export const defaultState = [
                         },
                         {
                             code: '/*insert code here*/'
+                        }
+                    ]
+                },
+
+                {
+                    title: 'justify-self and align-self',
+                    text: "These properties affect individual grid-items instead of all of them",
+                    code: `
+                        position: relative;
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(4, minmax(50px, 1fr));
+                        grid-auto-rows: 50px;
+                    `,
+                    initialHeight: '100',
+                    initialWidth: '100',
+                    gridItems: [
+                        {
+                            code: 'justify-self: center'
+                        },
+                        {
+                            code: 'align-items: end'
+                        },
+                        {
+                            code: '/*insert code here*/'
                         },
                         {
                             code: '/*insert code here*/'
@@ -705,6 +733,101 @@ export const defaultState = [
                 },
             ]
         },
-  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //sixth section
+
+        {
+            mainGrid:{
+                title: 'Spacing Grid Items:',
+                subtitle: "Column and grid gaps",
+                text: "You can insert space between grid-items with gutters: column-gap and row-gap",
+                mainGrid: {
+                    initialHeight: '200',
+                    initialWidth: '200',
+                    code: 
+        `
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: 100px 100px;
+        column-gap: 10px;
+        row-gap: 20px;
+        `,
+                    gridItems: [
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                    ]
+                }
+            },
+    
+            toggle:{
+                selectedIcon: null,
+            },
+    
+            docGrids:[
+                {
+                    title: 'justify-content and align-items',
+                    text: "Column-gap and row-gap are used to provide spacing between grid-items",
+                    code: `
+                        position: relative;
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(3, minmax(50px, 1fr));
+                        grid-auto-rows: 50px;
+                        column-gap: 10px;
+                        row-gap: 10px;
+                    `,
+                    initialHeight: '100',
+                    initialWidth: '100',
+                    gridItems: [
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        {
+                            code: '/*insert code here*/'
+                        },
+                        
+                    ]
+                }
+            ]
+        },
 ];
