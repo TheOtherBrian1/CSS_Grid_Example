@@ -1,12 +1,15 @@
  .card-wrapper{
     flex: 0 0 auto;
+    padding: 3px;
     margin-left: 10px;
     border-radius: 3px;
-    background-color: #ececec;
+    background-color: #968f8f;
     display: flex;
     align-items: center;
     overflow: hidden;
     justify-content: center;
+    margin-bottom: 3px;
+    margin-top:3px;
 }
 
 .explanation{
@@ -16,6 +19,7 @@
 }
 
 .card{
+    padding:10px;
     width: 200px;
     height: 200px;
     overflow: hidden;
@@ -42,13 +46,18 @@
     background-color: rgb(236, 233, 233);
 }
 
-.card:hover .editor-code{
+.editor-code{
+    display: none;
+}
+.explanation:hover .editor-code{
+    display: block;
+    background-color: rgb(236, 233, 233);
     position: absolute;
     display: block;
     width: 100%;
     height: 200px;
     padding-bottom: 40px;
 }
-.card:hover .text{
+.explanation:hover .text{
     display: none;
-} 
+}
