@@ -14,8 +14,10 @@ const Docs = ({docGrids, index})=>{
                                 <div 
                                   className = "card explanation"
                                 >
-                                    
-                                    <h4>{exmp.title}</h4>
+                                    <div className = 'doc-title-container'>
+                                        <h4 className = 'doc-title'>{exmp.title}</h4>
+                                        <span style={{fontSize: 8, margin: 1}}>(hover for code)</span>
+                                    </div>
                                     <hr />
                                     <span className = 'text'>{exmp.text}</span>
                                     <div className = "editor-code">

@@ -11,7 +11,19 @@
     margin-bottom: 3px;
     margin-top:3px;
 }
-
+hr{
+    margin: 0;
+    padding: 0;
+}
+.doc-title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.doc-title{
+    margin-bottom: 1px;
+    line-height: 1pc;
+}
 .explanation{
     background: rgb(250, 250, 250);
     font-size: min(3vw, .9rem);

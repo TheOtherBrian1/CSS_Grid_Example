@@ -3,8 +3,8 @@ export const defaultState = [
         //First section
         mainGrid:{
             title: 'Fixed Grid Templates:',
-            subtitle: 'Build grids with fixed dimensions in mind',
-            text: "It's important to note that you can still add more grids than defined, but their size will be outside",
+            subtitle: 'Build grids with fixed dimensions',
+            text: "It's important to note that you can still add more grids than defined, but their size will be outside your control",
             mainGrid: {
                 initialHeight: '200',
                 initialWidth: '200',
@@ -41,7 +41,7 @@ export const defaultState = [
         docGrids:[
            {
                 title: 'Grid shorthand',
-                text: 'This is shown in the main example. Each cell in the grid is defined by a x-axis measurement, a y-axis measurement, and a name in quotes',
+                text: 'This is shown in the main example. Each cell in the grid is defined by an x-axis measurement, a y-axis measurement, and a name in quotes',
                 code: `position: relative;\ndisplay: grid;\ngrid:\n"1      2" 50px\n"3      4" 50px\n/50px 50px;`,
                 initialHeight: '100',
                 initialWidth: '100',
@@ -149,7 +149,7 @@ export const defaultState = [
         docGrids:[
             {
                 title: 'Basic example of Units',
-                text: "",
+                text: "Hover over or click this box to see an example of different units in action",
                 code: `position: relative;\ndisplay: grid;\nwidth: 150px;\ngrid-template-columns: 30% 50px 1fr 1fr;\ngrid-template-rows: 100px;`,
                 initialHeight: '100',
                 initialWidth: '100',
@@ -280,7 +280,7 @@ export const defaultState = [
                         code: 'grid-column: 1/2;\n grid-row:1/3'
                     },
                     {
-                        code: '/*column-start / row-start / column-end / grid-end;*/\ngrid-area: 1 / 2 / 3 / 3;'
+                        code: '/*column-start / row-start / column-end / row-end;*/\ngrid-area: 1 / 2 / 3 / 3;'
                     },
                     {
                         code: 'grid-column:span 2'
