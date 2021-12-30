@@ -2,7 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    width: clamp(400px, 60%, 960px);
+    width: clamp(300px, 60%, 700px);
     min-height: 300px;
     padding: 20px;
     color: rgb(51, 68, 85);
@@ -10,6 +10,12 @@
     margin: 30px auto;
     background-color:white;
     box-shadow: rgba(85, 102, 119, 0.03) 0px 6px 8px 0px, rgba(85, 102, 119, 0.4) 0px 1px 1px 0px
+}
+
+@media screen and (max-width: 700px){
+    .example-container{
+        width: 100%;
+    }
 }
 .example-title{
     display: inline-block;
@@ -31,7 +37,6 @@
     justify-content: center;
 }
 .example-organizer{
-    margin: auto;
     padding-bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;

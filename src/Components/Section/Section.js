@@ -30,7 +30,7 @@ const Section = ()=>{
                         {
                             example.toggle.selectedIcon === 'Docs'
                                 &&
-                            <div>
+                            <div style = {{width: "100%"}}>
                                 <Docs docGrids = {example.docGrids} index = {index}/>
                             </div>
                         }

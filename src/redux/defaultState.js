@@ -43,25 +43,22 @@ export const defaultState = [
                 title: 'Grid shorthand',
                 text: 'This is shown in the main example. Each cell in the grid is defined by a x-axis measurement, a y-axis measurement, and a name in quotes',
                 code: `
-                    position: relative;\ndisplay: grid;\ngrid: 
-                        "1      2" 50px
-                        "3      4" 50px
-                        /50px 50px;
+                    position: relative;\ndisplay: grid;\ngrid:\n"1      2" 50px\n"3      4" 50px\n/50px 50px;
                 `,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     }
                 ]
             },
