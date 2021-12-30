@@ -11,6 +11,7 @@ const reducer = (state = defaultState, action) => {
         docGridIndex = null, 
         docGridItemIndex = null
     } = action.payload ?? {};
+    console.log(action);
     return (
         produce(state, draft=>{
             switch(action.type){
@@ -31,18 +32,17 @@ const reducer = (state = defaultState, action) => {
                     draft[index].toggle.selectedIcon = (state[index].toggle.selectedIcon === icon? null: icon);
                     break;
 
-                case constants.MODIFY_GRID_CODE:
-                    draft[index].subExamples[docGridIndex].code = newCode;
+                case constants.MODIFY_DOCS_GRID_CODE:
+                    draft[index].docGrids[docGridIndex].code = newCode;
                     break;
-                case constants.MODIFY_GRID_ITEM_CODE:
-                    draft[index].subExamples[docGridIndex].gridItems[docGridItemIndex].code = newCode;
+                case constants.MODIFY_DOCS_GRID_ITEM_CODE:
+                    draft[index].docGrids[docGridIndex].gridItems[docGridItemIndex].code = newCode;
                     break;
-                case constants.DELETE_GRID_ITEM:
-                    console.log('milk')
-                    draft[index].subExamples[docGridIndex].gridItems.splice(docGridItemIndex, 1);
+                case constants.DELETE_DOCS_GRID_ITEM:
+                    draft[index].docGrids[docGridIndex].gridItems.splice(docGridItemIndex, 1);
                     break;
-                case constants.ADD_GRID_ITEM:
-                    draft[index].subExamples[docGridIndex].gridItems.push({gridItemId: draft[index].gridItems.length - 1, code: ''})
+                case constants.ADD_DOCS_GRID_ITEM:
+                    draft[index].docGrids[docGridIndex].gridItems.push({gridItemId: draft[index].gridItems.length - 1, code: ''})
                     break;
 
                 default:

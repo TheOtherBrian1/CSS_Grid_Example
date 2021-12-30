@@ -45,25 +45,25 @@ export const toggleActions = {
 
 //payload = {exampleID, subId, newCode}
 const modifyGridCode = (payload)=>({
-    type: constants.MODIFY_GRID_CODE,
+    type: constants.MODIFY_DOCS_GRID_CODE,
     payload
 })
 
-//payload = {exampleID, subId, gridItemId}
+//payload = {exampleID, subId, gridItemId, newCode}
 const modifyGridItemCode = (payload)=>({
-    type: constants.MODIFY_GRID_ITEM_CODE,
+    type: constants.MODIFY_DOCS_GRID_ITEM_CODE,
     payload
 })
 
 //payload = {exampleID, subId, gridItemId}
 const deleteGridItem = (payload)=>({
-    type: constants.DELETE_GRID_ITEM,
+    type: constants.DELETE_DOCS_GRID_ITEM,
     payload
 })
 
 //payload = {exampleID, subId}
 const addGridItem = (payload)=>({
-    type: constants.ADD_GRID_ITEM,
+    type: constants.ADD_DOCS_GRID_ITEM,
     payload
 })
 

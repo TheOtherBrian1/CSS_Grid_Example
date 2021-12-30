@@ -43,9 +43,7 @@ export const defaultState = [
                 title: 'Grid shorthand',
                 text: 'This is shown in the main example. Each cell in the grid is defined by a x-axis measurement, a y-axis measurement, and a name in quotes',
                 code: `
-                    position: relative;
-                    display: grid;
-                    grid: 
+                    position: relative;\ndisplay: grid;\ngrid: 
                         "1      2" 50px
                         "3      4" 50px
                         /50px 50px;

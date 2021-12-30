@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
 import Editor from 'react-simple-code-editor';
-import {mainGridActions} from '../../redux/actions';
+import {mainGridActions, docsGridActions} from '../../redux/actions';
 import { highlight, languages } from 'prismjs/components/prism-core';
 import {PlusCircleOutlined, MinusCircleOutlined} from '@ant-design/icons';
 import 'prismjs/components/prism-clike';
@@ -11,19 +11,19 @@ import 'prismjs/themes/prism.css';
 import './CssEditor.css';
 
  
-const CssEditor = ({index, style, disable = true})=>{
-    console.log(index, 'style');
+const CssEditor = ({index, style, disable = true, isDocs=false, docGridIndex = null})=>{
+    
     const dispatch = useDispatch();
     return (
         <div className = "editor-container">
-            <div className = "">
+            <div>
                 Grid
                 <Editor
                     value={style.code}
                     onValueChange={code => 
                         // !disable
                         //     &&
-                        dispatch(mainGridActions.modifyMainGridCode({index, newCode: code}))}
+                        dispatch(isDocs? docsGridActions.modifyGridCode({index,docGridIndex, newCode:code}):mainGridActions.modifyMainGridCode({index, newCode: code}))}
                     highlight={j => highlight(style.code, languages.css)}
                     padding={10}
                     style={{
@@ -35,12 +35,12 @@ const CssEditor = ({index, style, disable = true})=>{
             {
                 
                 style.gridItems.map((item, itemIndex)=>
-                    <div key = {`${itemIndex}editor`}>
+                    <div key = {`${index}${itemIndex}editor`}>
                         Grid Item {itemIndex} 
                         
                         <Editor
                             value={item.code}
-                            onValueChange={code => dispatch(mainGridActions.modifyMainGridItemCode({index, gridItemIndex: itemIndex, newCode: code}))}
+                            onValueChange={newCode => dispatch(isDocs?docsGridActions.modifyGridItemCode({index, docGridIndex, newCode}):mainGridActions.modifyMainGridItemCode({index, gridItemIndex: itemIndex, newCode}))}
                             highlight={j => highlight(item.code, languages.css)}
                             padding={10}
                             style={{
@@ -83,4 +83,4 @@ const CssEditor = ({index, style, disable = true})=>{
         </div>
     );
 }
-export default CssEditor;
+export default React.memo(CssEditor);

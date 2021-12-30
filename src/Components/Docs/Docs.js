@@ -20,7 +20,7 @@ const Docs = ({docGrids, index})=>{
                                     <h4>{exmp.title}</h4>
                                     <hr />
                                     <div className = "editor-code">
-                                      <CssEditor style = {exmp}/>
+                                      <CssEditor index = {index} isDocs = {true} style = {exmp} docGridIndex = {i}/>
                                     </div>
                                     <span className = 'text'>{exmp.text}</span>
                                 </div>
