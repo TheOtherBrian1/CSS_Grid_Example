@@ -12,3 +12,7 @@
     transform: scale(1.1);
     cursor: pointer;
 }
+
+.editor-items{
+    padding: 10px;
+}

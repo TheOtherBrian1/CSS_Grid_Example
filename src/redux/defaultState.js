@@ -42,9 +42,7 @@ export const defaultState = [
            {
                 title: 'Grid shorthand',
                 text: 'This is shown in the main example. Each cell in the grid is defined by a x-axis measurement, a y-axis measurement, and a name in quotes',
-                code: `
-                    position: relative;\ndisplay: grid;\ngrid:\n"1      2" 50px\n"3      4" 50px\n/50px 50px;
-                `,
+                code: `position: relative;\ndisplay: grid;\ngrid:\n"1      2" 50px\n"3      4" 50px\n/50px 50px;`,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
@@ -65,57 +63,42 @@ export const defaultState = [
             {
                 title: '"templating properties"',
                 text: 'Grids can be defined using "grid-template-columns and grid-template-rows',
-                code: `
-                    position: relative;
-                    display: grid;
-
-                    /*defines the y axis*/
-                    grid-template-columns: 50px 50px;
-                    
-                    /*defines the x axis*/
-                    grid-template-rows: 75px 75px;
-                    
-                `,
+                code: `position: relative;\ndisplay: grid;\n/*defines the y axis*/\ngrid-template-columns: 50px 50px;\n/*defines the x axis*/\ngrid-template-rows: 75px 75px;`,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     }
                 ]
             },
             {
                 title: 'Repeat function',
                 text: "Not every cell needs to be defined explicitly. You can also define elements using Grid's built-in 'repeat function'",
-                code: `
-                    position: relative;
-                    display: grid;
-                    grid-template-columns: repeat(2, 50px);
-                    grid-template-rows: repeat(2, 60px);
-                `,
+                code: `position: relative;\ndisplay: grid;\ngrid-template-columns: repeat(2, 50px);\ngrid-template-rows: repeat(2, 60px);`,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     },
                     {
-                        code: ''
+                        code: '/*insert code here*/'
                     }
                 ]
             },
@@ -167,13 +150,7 @@ export const defaultState = [
             {
                 title: 'Basic example of Units',
                 text: "",
-                code: `
-                    position: relative;
-                    display: grid;
-                    width: 150px;
-                    grid-template-columns: 30% 50px 1fr 1fr;
-                    grid-template-rows: 100px
-                `,
+                code: `position: relative;\ndisplay: grid;\nwidth: 150px;\ngrid-template-columns: 30% 50px 1fr 1fr;\ngrid-template-rows: 100px;`,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
@@ -191,7 +168,6 @@ export const defaultState = [
                     }
                 ]
             },
-            
         ]
     },
 
@@ -244,12 +220,7 @@ export const defaultState = [
            {
                 title: 'Grid line model',
                 text: "Grids have an x and y axis. The first line for both axises of the grid is labeled one, followed by two, and so fourth. It's possible to span a cell from one grid line to another",
-                code: `
-                    position: relative;
-                    display: grid;
-                    grid-template-columns: 50px 50px;
-                    grid-template-rows: 50px 50px;
-                `,
+                code: `position: relative;\ndisplay: grid;\nngrid-template-columns: 50px 50px;\ngrid-template-rows: 50px 50px;`,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
@@ -268,12 +239,7 @@ export const defaultState = [
             {
                 title: 'Grid line model Cont.',
                 text: "There's a short hand called 'span' that tells CSS how many grid lines your grid-item should span",
-                code: `
-                    position: relative;
-                    display: grid;
-                    grid-template-columns: 50px 50px;
-                    grid-template-rows: 50px 50px;
-                `,
+                code: `position: relative;\ndisplay: grid;\ngrid-template-columns: 50px 50px;\ngrid-template-rows: 50px 50px;`,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
@@ -289,13 +255,7 @@ export const defaultState = [
             {
                 title: 'Span grid lines explicitly.',
                 text: "If you chose to name you grid cells with grid, you can explicitly label which cells your grid-items should occupy",
-                code: `
-                    position: relative;
-                    display: grid;
-                    grid: "a    b" 50px
-                          "a    b" 50px
-                        / 50px  50px
-                `,
+                code: `position: relative;\ndisplay: grid;\ngrid: "a    b" 50px\n"a    b" 50px\n/ 50px  50px;`,
                 initialHeight: '100',
                 initialWidth: '100',
                 gridItems: [
@@ -311,11 +271,7 @@ export const defaultState = [
             {
                 title: 'Span grids using grid lines',
                 text: "Grids have an x and y axis. The first line for both axises of the grid is labeled one, followed by two, and so fourth. It's possible to span a cell from one grid line to another",
-                code: `
-                    position: relative;
-                    display: grid;
-                    grid-template-columns: 50px 50px;
-                    grid-template-rows: 50px 50px 50px;
+                code: `\nposition: relative;\ndisplay: grid;\ngrid-template-columns: 50px 50px;\ngrid-template-rows: 50px 50px 50px;
                 `,
                 initialHeight: '100',
                 initialWidth: '100',
@@ -354,38 +310,6 @@ export const defaultState = [
             
         ]
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         //fourth section
 
@@ -444,36 +368,10 @@ export const defaultState = [
                {
                     title: 'The minmax function',
                     text: "minmax takes two arguments: (min-size, max-size). It defines how much a grid-item can grow or shrink",
-                    code: `
-                        position: relative;
-                        display: grid;
-                        grid-template-columns: 50px minmax(20px, 1fr);
-                    `,
+                    code: `position: relative;\ndisplay: grid;\ngrid-template-columns: 50px minmax(20px, 1fr);`,
                     initialHeight: '100',
                     initialWidth: '100',
                     gridItems: [
-                        {
-                            code: '/*insert code here*/'
-                        },
-                        {
-                            code: '/*insert code here*/'
-                        }
-                    ]
-                },     
-                {
-                    title: 'The repeat function',
-                    text: "repeat takes two arguments: (number of items/auto-fit/auto-fill, width or height of column/row). It can be used to specify a finite amount of rows or colums. When used with auto-fill or auto-fit, it can be ",
-                    code: `
-                        position: relative;
-                        display: grid;
-                        grid-template-columns: repeat(3, 50px);
-                    `,
-                    initialHeight: '100',
-                    initialWidth: '100',
-                    gridItems: [
-                        {
-                            code: '/*insert code here*/'
-                        },
                         {
                             code: '/*insert code here*/'
                         },
@@ -483,14 +381,36 @@ export const defaultState = [
                     ]
                 },
                 {
-                    title: 'The autofill function',
-                    text: "A repeat function set to auto-fill will fill any extra space with invisible grid-items.",
-                    code: `
-                        position: relative;
-                        width: 50%;
-                        display: grid;
-                        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-                    `,
+                    title: 'The grid-auto-rows/columns property',
+                    text: "The grid-auto-row grid property automatically creates as many rows of a certain size as needed",
+                    code: `position: relative;\ndisplay: grid;\ngrid-template-columns: 50px 100px;\ngrid-auto-columns: 100px;`,
+                    initialHeight: '100',
+                    initialWidth: '100',
+                    gridItems: [
+                        {
+                            code: '/*place code here*/'
+                        },
+                        {
+                            code: '/*place code here*/'
+                        },
+                        {
+                            code: '/*place code here*/'
+                        },
+                        {
+                            code: '/*place code here*/'
+                        },
+                        {
+                            code: '/*place code here*/'
+                        },
+                        {
+                            code: '/*place code here*/'
+                        }
+                    ]
+                },     
+                {
+                    title: 'The repeat function',
+                    text: "repeat takes two arguments: (number of items/auto-fit/auto-fill, width or height of column/row). It can be used to specify a finite amount of rows or colums. When used with auto-fill or auto-fit, it can be ",
+                    code: `position: relative;\ndisplay: grid;\ngrid-template-columns: repeat(3, 50px);`,
                     initialHeight: '100',
                     initialWidth: '100',
                     gridItems: [
@@ -507,13 +427,8 @@ export const defaultState = [
                 },
                 {
                     title: 'The auto-fill function',
-                    text: "A repeat function set to auto-fill will fill any extra space with invisible grid-items.",
-                    code: `
-                        position: relative;
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-                    `,
+                    text: "A repeat function set to auto-fill will fill any extra space with invisible grid-items. If there is not enough space for a new item to fit, the item will wrap-around",
+                    code: `position: relative;\nwidth: 100%;\ndisplay: grid;\ngrid-template-columns: repeat(auto-fill, minmax(50px, 1fr));`,
                     initialHeight: '100',
                     initialWidth: '100',
                     gridItems: [
@@ -544,21 +459,10 @@ export const defaultState = [
                 {
                     title: 'The auto-fit function',
                     text: "A repeat function set to auto-fit will stretch its grid-items as much as permitted to fill any extra space before allowing one to wrap around.",
-                    code: `
-                        position: relative;
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-                    `,
+                    code: `position: relative;\nwidth: 100%;\ndisplay: grid;\ngrid-template-rows: repeat(auto-fit, minmax(50px, 1fr));\ngrid-template-columns:50px 50px 50px;`,
                     initialHeight: '100',
                     initialWidth: '100',
                     gridItems: [
-                        {
-                            code: '/*insert code here*/'
-                        },
-                        {
-                            code: '/*insert code here*/'
-                        },
                         {
                             code: '/*insert code here*/'
                         },
@@ -660,15 +564,7 @@ export const defaultState = [
                 {
                     title: 'justify-content and align-items',
                     text: "The justify-items and align-items respectively center grid content from the x and y axis",
-                    code: `
-                        position: relative;
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(4, minmax(50px, 1fr));
-                        grid-auto-rows: 50px;
-                        justify-items: center;
-                        align-items: center;
-                    `,
+                    code: `position: relative;\nwidth: 100%;\ndisplay: grid;\ngrid-template-columns: repeat(4, minmax(50px, 1fr));\ngrid-auto-rows: 50px;\njustify-items: center;\nalign-items: center;`,
                     initialHeight: '100',
                     initialWidth: '100',
                     gridItems: [
@@ -696,13 +592,7 @@ export const defaultState = [
                 {
                     title: 'justify-self and align-self',
                     text: "These properties affect individual grid-items instead of all of them",
-                    code: `
-                        position: relative;
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(4, minmax(50px, 1fr));
-                        grid-auto-rows: 50px;
-                    `,
+                    code: `position: relative;\nwidth: 100%;\ndisplay: grid;\ngrid-template-columns: repeat(4, minmax(50px, 1fr));\ngrid-auto-rows: 50px;`,
                     initialHeight: '100',
                     initialWidth: '100',
                     gridItems: [
@@ -796,15 +686,7 @@ export const defaultState = [
                 {
                     title: 'justify-content and align-items',
                     text: "Column-gap and row-gap are used to provide spacing between grid-items",
-                    code: `
-                        position: relative;
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(3, minmax(50px, 1fr));
-                        grid-auto-rows: 50px;
-                        column-gap: 10px;
-                        row-gap: 10px;
-                    `,
+                    code: `position: relative;\nwidth: 100%;\ndisplay: grid;\ngrid-template-columns: repeat(3, minmax(50px, 1fr));\ngrid-auto-rows: 50px;\ncolumn-gap: 10px;\nrow-gap: 10px;`,
                     initialHeight: '100',
                     initialWidth: '100',
                     gridItems: [

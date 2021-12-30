@@ -22,7 +22,7 @@ const Docs = ({docGrids, index})=>{
                                       <CssEditor index = {index} isDocs = {true} style = {exmp} docGridIndex = {i}/>
                                     </div>
                                 </div>
-                                <div className = "card card-grid">
+                                <div className = "card-visuals card-grid">
                                     <GridGenerator 
                                         initialHeight = {exmp.initialHeight}
                                         initialWidth = {exmp.initialWidth}

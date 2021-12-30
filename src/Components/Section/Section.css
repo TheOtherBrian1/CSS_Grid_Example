@@ -2,7 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    width: clamp(300px, 60%, 700px);
+    width: clamp(300px, 60%, 900px);
     min-height: 300px;
     padding: 20px;
     color: rgb(51, 68, 85);

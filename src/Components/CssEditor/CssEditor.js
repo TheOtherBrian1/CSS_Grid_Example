@@ -16,7 +16,7 @@ const CssEditor = ({index, style, disable = true, isDocs=false, docGridIndex = n
     const dispatch = useDispatch();
     return (
         <div className = "editor-container">
-            <div>
+            <div className = "editor-items">
                 Grid
                 <Editor
                     value={style.code}
@@ -32,26 +32,26 @@ const CssEditor = ({index, style, disable = true, isDocs=false, docGridIndex = n
                     }}
                 />
             </div>
-            {
-                
-                style.gridItems.map((item, itemIndex)=>
-                    <div key = {`${index}${itemIndex}editor`}>
-                        Grid Item {itemIndex} 
-                        
-                        <Editor
-                            value={item.code}
-                            onValueChange={newCode => dispatch(isDocs?docsGridActions.modifyGridItemCode({index, docGridIndex, newCode}):mainGridActions.modifyMainGridItemCode({index, gridItemIndex: itemIndex, newCode}))}
-                            highlight={j => highlight(item.code, languages.css)}
-                            padding={10}
-                            style={{
-                                fontFamily: '"Fira code", "Fira Mono", monospace',
-                                fontSize: 12,
-                            }}
-                        />
-                    </div>
-                )
-                
-            }
+            <div className = "editor-items">
+                {
+                    style.gridItems.map((item, itemIndex)=>
+                        <div key = {`${index}${itemIndex}editor`}>
+                            Grid Item {itemIndex} 
+                            
+                            <Editor
+                                value={item.code}
+                                onValueChange={newCode => dispatch(isDocs?docsGridActions.modifyGridItemCode({index, docGridIndex: itemIndex, newCode}):mainGridActions.modifyMainGridItemCode({index, gridItemIndex: itemIndex, newCode}))}
+                                highlight={j => highlight(item.code, languages.css)}
+                                padding={10}
+                                style={{
+                                    fontFamily: '"Fira code", "Fira Mono", monospace',
+                                    fontSize: 12,
+                                }}
+                            />
+                        </div>
+                    )
+                }
+            </div>
             {
                 disable && <div className = "grid-modifier-container">
                 {   
