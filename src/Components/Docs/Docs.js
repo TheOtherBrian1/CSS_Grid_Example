@@ -42,12 +42,3 @@ const Docs = ({docGrids, index})=>{
 };
 
 export default Docs;
-
-
-/*
-<Collapse accordion = {true} onChange={(e)=>console.log(e)}>                        
-                                        <Panel header="code" className = "panel" key = "one">
-                                            <CssEditor disable = {true} style = {exmp}/>
-                                        </Panel>
-                                    </Collapse>
-*/

@@ -6,19 +6,19 @@ const modifyMainGridCode = (payload)=>({
     payload
 })
 
-//payload = {exampleID, gridItemId, gridItemCode}
+//payload = {index, gridItemIndex, gridItemCode}
 const modifyMainGridItemCode = (payload)=>({
     type: constants.MODIFY_MAIN_GRID_ITEM_CODE,
     payload
 })
 
-//payload = {exampleID}
+//payload = {index}
 const deleteMainGridItem = (payload)=>({
     type: constants.DELETE_MAIN_GRID_ITEM,
     payload
 })
 
-//payload = {exampleID}
+//payload = {index}
 const addMainGridItem = (payload)=>({
     type: constants.ADD_MAIN_GRID_ITEM,
     payload
@@ -32,7 +32,7 @@ export const mainGridActions = {
     addMainGridItem,
 }
 
-//expected payload: {icon: 'code'/'docs'}
+//expected payload: {index, icon: 'code'/'docs'}
 const toggleIcon = (payload)=>({
     type: constants.SELECT_ICON,
     payload
@@ -43,25 +43,25 @@ export const toggleActions = {
     toggleIcon
 };
 
-//payload = {exampleID, subId, newCode}
+//payload = {index, docGridIndex, newCode}
 const modifyGridCode = (payload)=>({
     type: constants.MODIFY_DOCS_GRID_CODE,
     payload
 })
 
-//payload = {exampleID, subId, gridItemId, newCode}
+//payload = {index, gridItemId, docGridIndex, newCode}
 const modifyGridItemCode = (payload)=>({
     type: constants.MODIFY_DOCS_GRID_ITEM_CODE,
     payload
 })
 
-//payload = {exampleID, subId, gridItemId}
+//payload = {exampleID, docGridIndex, gridItemId}
 const deleteGridItem = (payload)=>({
     type: constants.DELETE_DOCS_GRID_ITEM,
     payload
 })
 
-//payload = {exampleID, subId}
+//payload = {exampleID, docGridIndex}
 const addGridItem = (payload)=>({
     type: constants.ADD_DOCS_GRID_ITEM,
     payload

@@ -17,15 +17,15 @@ const Section = ()=>{
                 state.map((example, index)=>(
                     <div className = "example-container" key = {index + 'SectionExample'}>
                         <SectionHeader 
-                            title = {example.mainGrid.title} 
-                            subtitle = {example.mainGrid.subtitle}
-                            text = {example.mainGrid.text}
+                            title = {example.section.title} 
+                            subtitle = {example.section.subtitle}
+                            text = {example.section.text}
                         />
                         <ToggleDocsOrCSSEditor toggle = {example.toggle} index = {index} />
                         {
                             example.toggle.selectedIcon === 'CSS'
                                 &&
-                            <CssEditor style = {example.mainGrid.mainGrid} index = {index} />
+                            <CssEditor style = {example.section.mainGrid} index = {index} />
                         }
                         {
                             example.toggle.selectedIcon === 'Docs'
@@ -36,11 +36,11 @@ const Section = ()=>{
                         }
                         <section className = "example-main-visual">
                             <GridGenerator
-                                initialHeight = {example.mainGrid.mainGrid.initialHeight}
-                                initialWidth = {example.mainGrid.mainGrid.initialWidth}
-                                code = {example.mainGrid.mainGrid.code}
+                                initialHeight = {example.section.mainGrid.initialHeight}
+                                initialWidth = {example.section.mainGrid.initialWidth}
+                                code = {example.section.mainGrid.code}
                                 title = {example.title}
-                                gridItems = {example.mainGrid.mainGrid.gridItems}
+                                gridItems = {example.section.mainGrid.gridItems}
                                 index = {index}
                             />
                         </section>
@@ -52,16 +52,3 @@ const Section = ()=>{
 }
 
 export default Section;
-
-/*
-                        {
-                            example.toggle.selectedIcon === 'Docs'
-                                &&
-                            <div>
-                                <Docs docGrids = {example.docGrids} index = {index}/>
-                            </div>
-                        }
-                        
-
-                            
-*/

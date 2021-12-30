@@ -1,7 +1,54 @@
+//Houses the data for creating and updating the examples
+/*
+    STATE STRUCTURE:
+
+    [
+        {  
+            section:{
+                title: string,
+                subtitle: string,
+                text: string,
+                mainGrid: {
+                    initialHeight: (starting height of grid) string,
+                    initialWidth: string,
+                    code: (css code) string
+                    gridItems: [
+                        {
+                            code: (grid item code) string
+                        },
+                        ...
+                    ]
+                }
+            },
+            toggle: {
+                selectedIcon: "CSS"|"Docs" string
+            },
+            docGrids:[
+                {
+                    title: string,
+                    text: string,
+                    code: (css code for doc grid) string,
+                    initialHeight: string,
+                    initialWidth: string,
+                    gridItems: [
+                        {
+                            code: (css code) string
+                        },
+                        ...
+                    ]
+                }
+            ]
+        },
+        ...repeat above
+    ]
+*/
+
+
+
 export const defaultState = [
     {
         //First section
-        mainGrid:{
+        section:{
             title: 'Fixed Grid Templates:',
             subtitle: 'Build grids with fixed dimensions',
             text: "It's important to note that you can still add more grids than defined, but their size will be outside your control",
@@ -108,7 +155,7 @@ export const defaultState = [
 
     //second section
     {
-        mainGrid:{
+        section:{
             title: 'Grid Units:',
             subtitle: 'How to use the "fr" unit',
             text: "Grids can use all basic units, like percentages, px, vmin, etc. However, they also can use the fr unit. any cell with the fr unit will take up all remaining space available, unless their is another cell with the unit. When there are 2 cells with fr units, let's say cell one takes up '1fr' and cell two takes up '2fr' then they will split the remaining space based off their relative ratios to each other.",
@@ -179,7 +226,7 @@ export const defaultState = [
 
     //third section
     {
-        mainGrid:{
+        section:{
             title: 'Grid Cells Spanning Multiple columns/rows:',
             subtitle: 'How to have grid cells take up multiple columns and rows',
             text: "As long as a grid is somewhat defined, you can designate certain grid-items to take up multiple columns/rows",
@@ -314,7 +361,7 @@ export const defaultState = [
         //fourth section
 
         {
-            mainGrid:{
+            section:{
                 title: 'Auto-Resizing Grids for Dynamic Content:',
                 subtitle: ' Program your grid to gracefully grow and shrink for new content',
                 text: "Grids come with 4 special functions/keywords that allow them to grow, shrink, and dynamically add new content: 'repeat', 'auto-fill', 'auto-fix', 'minmax'",
@@ -516,7 +563,7 @@ export const defaultState = [
         //fifth section
 
         {
-            mainGrid:{
+            section:{
                 title: 'Aligning Content:',
                 subtitle: "Orient your grid's content",
                 text: "Grids use justify-items and align-items, as well as align-self and justify-self, to position grid items' content",
@@ -639,7 +686,7 @@ export const defaultState = [
         //sixth section
 
         {
-            mainGrid:{
+            section:{
                 title: 'Spacing Grid Items:',
                 subtitle: "Column and grid gaps",
                 text: "You can insert space between grid-items with gutters: column-gap and row-gap",
