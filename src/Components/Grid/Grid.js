@@ -21,7 +21,7 @@ const GridGenerator =({initialHeight, initialWidth, code, gridItems, title})=>{
                             <GridItem 
                                 style = {{backgroundColor: GRID_COLORS[i]}}
                                 className = 'grid-item' 
-                                key={`${uuidv4()}`}  
+                                key={`${i}grid${GRID_COLORS[i]}`}  
                             >
                                 {i}
                             </GridItem>
