@@ -33,4 +33,4 @@ const GridGenerator =({initialHeight, initialWidth, code, gridItems, title})=>{
     )
 }
 
-export default GridGenerator;
+export default React.memo(GridGenerator);
