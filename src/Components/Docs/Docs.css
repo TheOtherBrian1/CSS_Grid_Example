@@ -3,21 +3,21 @@
     margin-left: 10px;
     border-radius: 3px;
     background-color: #ececec;
-    padding: 10px;
     display: flex;
     align-items: center;
+    overflow: hidden;
     justify-content: center;
 }
 
 .explanation{
     background: rgb(250, 250, 250);
     font-size: min(3vw, .9rem);
-    overflow-y: auto;
+    position: relative;
 }
 .card{
     width: 200px;
     height: 200px;
-    padding: 10px;
+    overflow: hidden;
 }
 
 .card-grid{
@@ -38,4 +38,15 @@
 
 .panel{
     background-color: rgb(236, 233, 233);
+}
+
+.card:hover .editor-code{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 200px;
+    padding-bottom: 40px;
+}
+.card:hover .text{
+    display: none;
 }

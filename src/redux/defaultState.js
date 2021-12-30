@@ -68,7 +68,7 @@ export const defaultState = [
                 ]
             },
             {
-                title: 'Defining fixed columns with the "templating properties"',
+                title: '"templating properties"',
                 text: 'Grids can be defined using "grid-template-columns and grid-template-rows',
                 code: `
                     position: relative;
