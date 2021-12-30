@@ -3,13 +3,13 @@ import {useDispatch} from 'react-redux';
 import Editor from 'react-simple-code-editor';
 import {mainGridActions} from '../../redux/actions';
 import { highlight, languages } from 'prismjs/components/prism-core';
-import {PlusCircleOutlined, MinusCircleOutlined} from '@ant-design/icons';
+//import {PlusCircleOutlined, MinusCircleOutlined} from '@ant-design/icons';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-css';
 import 'prismjs/themes/prism.css';
 import './CssEditor.css';
-import { v4 as uuidv4 } from 'uuid'; 
+//import { v4 as uuidv4 } from 'uuid'; 
 
  
 const CssEditor = ({index, style, disable = true})=>{
@@ -22,8 +22,8 @@ const CssEditor = ({index, style, disable = true})=>{
                 <Editor
                     value={style.code}
                     onValueChange={code => 
-                        !disable
-                            &&
+                        // !disable
+                        //     &&
                         dispatch(mainGridActions.modifyMainGridCode({index, newCode: code}))}
                     highlight={j => highlight(style.code, languages.css)}
                     padding={10}
@@ -34,6 +34,7 @@ const CssEditor = ({index, style, disable = true})=>{
                 />
             </div>
             {
+                /*
                 style.gridItems.map((item, itemIndex)=>
                     <div key = {`${itemIndex}${uuidv4()}editor`}>
                         Grid Item {itemIndex} 
@@ -50,8 +51,11 @@ const CssEditor = ({index, style, disable = true})=>{
                         />
                     </div>
                 )
+                */
             }
-            {disable && <div className = "grid-modifier-container">
+            {
+                /*
+                disable && <div className = "grid-modifier-container">
                 {   
                     style.gridItems.length > 4 
                         &&
@@ -76,7 +80,8 @@ const CssEditor = ({index, style, disable = true})=>{
                         <PlusCircleOutlined style = {{margin: 10, color:"#52c41a"}} />
                     </label>
                 }
-            </div>}
+            </div>
+            */}
         </div>
     );
 }
